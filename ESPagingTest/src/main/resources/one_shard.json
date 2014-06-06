@@ -1,0 +1,22 @@
+{
+    "settings": {
+    	"number_of_shards" : 1,
+        "number_of_replicas" : 0
+    },
+    "mappings": {
+        "test_type": {
+        	"_id": {
+        		"path": "id"
+        	},
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+            	"test" : {
+            		"type": "string"
+            	}
+            }
+        }
+    }
+}

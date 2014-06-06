@@ -1,0 +1,248 @@
+июн 06, 2014 10:59:23 PM org.elasticsearch.node
+INFO: [Fury] version[1.1.1], pid[11453], build[f1585f0/2014-04-16T14:27:12Z]
+июн 06, 2014 10:59:23 PM org.elasticsearch.node
+INFO: [Fury] initializing ...
+июн 06, 2014 10:59:23 PM org.elasticsearch.plugins
+INFO: [Fury] loaded [], sites []
+июн 06, 2014 10:59:25 PM org.elasticsearch.node
+INFO: [Fury] initialized
+июн 06, 2014 10:59:25 PM org.elasticsearch.node
+INFO: [Fury] starting ...
+июн 06, 2014 10:59:25 PM org.elasticsearch.transport
+INFO: [Fury] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.1.65:9300]}
+июн 06, 2014 10:59:28 PM org.elasticsearch.cluster.service
+INFO: [Fury] new_master [Fury][uazNuNi4T2aHBTdrhUHbAA][dkiselev-N73SV][inet[/192.168.1.65:9300]], reason: zen-disco-join (elected_as_master)
+июн 06, 2014 10:59:28 PM org.elasticsearch.discovery
+INFO: [Fury] TEST/uazNuNi4T2aHBTdrhUHbAA
+июн 06, 2014 10:59:28 PM org.elasticsearch.http
+INFO: [Fury] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.1.65:9200]}
+июн 06, 2014 10:59:29 PM org.elasticsearch.gateway
+INFO: [Fury] recovered [1] indices into cluster_state
+июн 06, 2014 10:59:29 PM org.elasticsearch.node
+INFO: [Fury] started
+июн 06, 2014 10:59:29 PM org.elasticsearch.cluster.metadata
+INFO: [Fury] [test] deleting index
+TEST one_shard.json
+июн 06, 2014 10:59:29 PM org.elasticsearch.cluster.metadata
+INFO: [Fury] [test] creating index, cause [api], shards [1]/[0], mappings [test_type]
+Create index.
+Populate
+июн 06, 2014 10:59:30 PM org.elasticsearch.cluster.metadata
+INFO: [Fury] [test] update_mapping [test_type] (dynamic)
+querry
+{
+  "from" : 0,
+  "size" : 5,
+  "query" : {
+    "match_all" : { }
+  },
+  "fields" : [ ]
+}
+response
+{
+  "took" : 63,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 100,
+    "max_score" : 1.0,
+    "hits" : [ {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-0",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-1",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-2",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-3",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-4",
+      "_score" : 1.0
+    } ]
+  }
+}
+RESULT: expect 5, got 5
+июн 06, 2014 10:59:31 PM org.elasticsearch.cluster.metadata
+INFO: [Fury] [test] deleting index
+TEST five_shards.json
+июн 06, 2014 10:59:31 PM org.elasticsearch.cluster.metadata
+INFO: [Fury] [test] creating index, cause [api], shards [5]/[1], mappings [test_type]
+Create index.
+Populate
+querry
+{
+  "from" : 0,
+  "size" : 5,
+  "query" : {
+    "match_all" : { }
+  },
+  "fields" : [ ]
+}
+июн 06, 2014 10:59:31 PM org.elasticsearch.cluster.metadata
+INFO: [Fury] [test] update_mapping [test_type] (dynamic)
+response
+{
+  "took" : 17,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 100,
+    "max_score" : 1.0,
+    "hits" : [ {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-1",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-6",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-10",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-15",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-22",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-0",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-5",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-14",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-19",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-21",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-4",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-9",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-13",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-18",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-20",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-2",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-7",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-11",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-16",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-23",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-3",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-8",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-12",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-17",
+      "_score" : 1.0
+    }, {
+      "_index" : "test",
+      "_type" : "test_type",
+      "_id" : "id-24",
+      "_score" : 1.0
+    } ]
+  }
+}
+RESULT: expect 5, got 25
+июн 06, 2014 10:59:32 PM org.elasticsearch.node
+INFO: [Fury] stopping ...
+июн 06, 2014 10:59:33 PM org.elasticsearch.node
+INFO: [Fury] stopped
+июн 06, 2014 10:59:33 PM org.elasticsearch.node
+INFO: [Fury] closing ...
+июн 06, 2014 10:59:33 PM org.elasticsearch.node
+INFO: [Fury] closed
